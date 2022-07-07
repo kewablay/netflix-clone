@@ -1,8 +1,11 @@
 import React from 'react'
+import Nav from "./Nav"
 
 function HomeScreen() {
   return (
-    <div>This is the HomeScreen section</div>
+    <>
+    <Nav />    
+    </>
   )
 }
 

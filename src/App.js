@@ -1,11 +1,12 @@
 import React from 'react';
 import { Counter } from './features/counter/Counter';
 import './App.css';
+import HomeScreen from './components/HomeScreen';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Building netflix clone </h1>
+    <div className="app">
+      <HomeScreen />
     </div>
   );
 }
