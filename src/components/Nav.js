@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import netflixLogo from "../images/netflixLogo.png";
 import avatar from "../images/netflix-avatar.png";
-import "./Nav.css";
+import "../css/Nav.css";
 
 function Nav() {
   const [show, setShow] = useState(false);
