@@ -1,12 +1,15 @@
-import React from 'react'
-import Nav from "./Nav"
+import React from "react";
+import Banner from "./Banner";
+import Nav from "./Nav";
+import Row from "./Row";
 
 function HomeScreen() {
   return (
     <>
-    <Nav />    
+      <Nav />
+      <Banner />
+      <Row />
     </>
-  )
+  );
 }
-
-export default HomeScreen
+export default HomeScreen;
