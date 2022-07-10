@@ -1,11 +1,13 @@
 import React from "react";
 import "../css/Banner.css";
 
+console.log(process.env.REACT_APP_API_KEY);
+console.log("kewa blay");
+
 function Banner() {
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
-
   return (
     <div>
       <header
