@@ -4,6 +4,7 @@
   background: red;
   object-fit: contain;
   color: white;
+  margin-bottom: 2rem;
 }
 
 .banner__content {

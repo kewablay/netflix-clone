@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   /* background-color: rgb(24, 23, 23); */
+  background-color: black;
   padding: 0;
   box-sizing: border-box;
 }
