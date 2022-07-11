@@ -1,5 +1,5 @@
 .row {
-  transition: all 0.3s;
+  transition: all 0.5s;
   color: white;
   margin-left: 20px;
   /* display: flex; */
@@ -19,9 +19,11 @@
 .row__poster {
   object-fit: contain;
   max-height: 100px;
-  margin-right: 10px;
+  margin-right: 1rem;
   width: 178px;
   transition: transform 0.2s;
+  border-radius: 4px;
+  border: 1px solid rgba(112, 109, 109, 0.527);
 }
 
 .row__poster:hover {
@@ -32,6 +34,7 @@
 .row__posterLarge {
   max-height: 250px;
   margin-right: 1.2rem;
+  border-radius: 0px;
 }
 
 .row__posterLarge:hover {
