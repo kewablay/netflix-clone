@@ -3,7 +3,7 @@ import "../css/Banner.css";
 import axios from "../axios";
 import requests from "../Requests";
 
-// console.log(process.env.REACT_APP_API_KEY);
+console.log(process.env.REACT_APP_API_KEY);
 
 function Banner() {
   const [movie, setMovie] = useState([]);
