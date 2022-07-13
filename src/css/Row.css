@@ -41,3 +41,7 @@
   transform: scale(1.09);
   opacity: 1;
 }
+
+.row__trailer {
+  transition: all 0.2s ease-in-out;
+}
