@@ -1,7 +1,9 @@
 import React from "react";
 import { Counter } from "./features/counter/Counter";
 import "./App.css";
-import HomeScreen from "./components/HomeScreen";
+import HomeScreen from "./screens/HomeScreen";
+
+import LoginScreen from "./screens/LoginScreen";
 
 function App() {
   // console.log(process.env);
@@ -9,7 +11,8 @@ function App() {
 
   return (
     <div className="app">
-      <HomeScreen />
+      {/* <HomeScreen /> */}
+      <LoginScreen />
     </div>
   );
 }

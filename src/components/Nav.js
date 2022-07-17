@@ -5,6 +5,7 @@ import "../css/Nav.css";
 
 function Nav() {
   const [show, setShow] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
@@ -24,7 +25,11 @@ function Nav() {
     <div className={`nav ${show && "nav--black"}`}>
       <div className="nav__contents">
         <img src={netflixLogo} alt="NETFLIX" className="nav__logo" />
-        <img src={avatar} alt="account" className="nav__avatar" />
+        {loggedIn ? (
+          <img src={avatar} alt="account" className="nav__avatar" />
+        ) : (
+          <button className="nav__button">Sign In</button>
+        )}
       </div>
     </div>
   );
