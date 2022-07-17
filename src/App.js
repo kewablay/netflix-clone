@@ -2,8 +2,8 @@ import React from "react";
 import { Counter } from "./features/counter/Counter";
 import "./App.css";
 import HomeScreen from "./screens/HomeScreen";
-
 import LoginScreen from "./screens/LoginScreen";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   // console.log(process.env);
@@ -11,8 +11,12 @@ function App() {
 
   return (
     <div className="app">
-      {/* <HomeScreen /> */}
-      <LoginScreen />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<LoginScreen />} />
+          <Route path="/home" element={<HomeScreen />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

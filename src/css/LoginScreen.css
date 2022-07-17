@@ -14,22 +14,29 @@
   height: 100%;
   background: linear-gradient(
     black,
-    rgba(27, 17, 161, 0.255),
+    rgba(0, 0, 0, 0.484),
+    rgba(0, 0, 0, 0.473),
+    rgba(77, 16, 6, 0.255),
     rgba(0, 0, 0, 0.205)
   );
-  opacity: 0.9;
+  opacity: 1;
 }
 
-#loginScreen > form {
+.loginScreen__mainContent {
+  z-index: 1000;
+  margin: 2rem;
+}
+
+.loginScreen__loginForm {
   background: rgba(0, 0, 0, 0.791);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   border-radius: 7px;
-  z-index: 1000;
 }
 
-#loginScreen > form > input {
+.loginScreen__loginForm > input,
+.getStarted__form > input {
   padding: 0.8rem;
   width: 280px;
   max-width: 300px;
@@ -74,4 +81,42 @@ button[type="submit"]:hover {
 }
 .loginScreen__link:hover {
   border-bottom: 1px solid white;
+}
+
+.getStarted {
+  color: white;
+  max-width: 35rem;
+  text-align: center;
+}
+
+.getStarted h2 {
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 52px;
+}
+
+.getStarted p {
+  font-size: 17px;
+  font-weight: 300;
+  margin: 0.5rem 0;
+}
+
+.getStarted small {
+  font-weight: 300;
+}
+.getStarted__form {
+  display: flex;
+  justify-content: center;
+}
+
+.getStarted__form > input {
+  width: 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.getStarted__form button[type="submit"] {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-top: 1rem;
 }
