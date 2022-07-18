@@ -1,0 +1,83 @@
+.profileScreen {
+  color: white;
+}
+.container {
+  width: 50%;
+  max-width: 50rem;
+  /* background-color: grey; */
+  margin: auto;
+  margin-top: 5%;
+}
+
+.profileScreen__content {
+  display: flex;
+  gap: 2rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+.profileScreen__details {
+  flex: 1;
+}
+
+.profileScreen__content .email {
+  background-color: grey;
+  padding: 0.8rem;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.profileScreen__content button {
+  outline: none;
+  background-color: red;
+  border: none;
+  border-radius: 3px;
+  margin-top: 1rem;
+  color: white;
+  padding: 0.7rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.profileScreen__submit {
+  width: 100%;
+}
+.profileScreen__content button:hover {
+  background: #ff000d;
+  box-shadow: 1px 2px 2px #555454b0;
+}
+
+.profileScreen__avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 3px;
+}
+
+.profileScreen__plans h3 {
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  border-bottom: 1px solid rgb(27, 27, 27);
+}
+.profileScreen__renewDate {
+  color: grey;
+  padding: 0.5rem 0;
+}
+
+.profileScreen__planList {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+.netflixPlan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.7;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.netflixPlan:hover {
+  opacity: 1;
+}
