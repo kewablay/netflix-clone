@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { auth } from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice";
+import ProfileScreen from "./screens/ProfileScreen";
 
 function App() {
   // console.log(process.env);
@@ -25,13 +26,14 @@ function App() {
           })
         );
       } else {
-        dispatch(logout);
+        dispatch(logout());
         console.log("logged out");
+        console.log(user);
       }
     });
 
     return unsuscribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="app">
@@ -41,6 +43,7 @@ function App() {
         ) : (
           <Routes>
             <Route path="/" element={<HomeScreen />} />
+            <Route path="/profile" element={<ProfileScreen />} />
           </Routes>
         )}
       </Router>
