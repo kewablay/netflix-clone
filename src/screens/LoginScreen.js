@@ -4,10 +4,12 @@ import LoginForm from "../components/LoginForm";
 import "../css/LoginScreen.css";
 import netflixBanner from "../images/netflix-brand-banner.jpeg";
 import GetStarted from "../components/GetStarted";
+import RegisterForm from "../components/RegisterForm";
 
 function LoginScreen() {
   const [signIn, setSignIn] = useState(false);
   const [email, setEmail] = useState(null);
+  const [showRegister, setShowregister] = useState(false);
   console.log(signIn);
   const emailReference = useRef(null);
 
@@ -15,6 +17,13 @@ function LoginScreen() {
     e.preventDefault();
     setSignIn(true);
     setEmail(emailReference.current.value);
+  };
+
+  const handleShowRegister = () => {
+    setShowregister(true);
+  };
+  const handleShowSignIn = () => {
+    setShowregister(false);
   };
 
   return (
@@ -29,26 +38,16 @@ function LoginScreen() {
         <div className="backdrop"></div>
         <div className="loginScreen__mainContent">
           {signIn ? (
-            <LoginForm email={email} />
+            showRegister ? (
+              <RegisterForm email={email} handleShowSignIn={handleShowSignIn} />
+            ) : (
+              <LoginForm
+                email={email}
+                handleShowRegister={handleShowRegister}
+              />
+            )
           ) : (
-            <div className="getStarted">
-              <h2>Unlimited Movies, TV shows and more.</h2>
-              <p>Watch anywhere. Cancel anytime.</p>
-              <small>
-                Ready to watch? Enter your email to create ro restart your
-                membership
-              </small>
-              <form className="getStarted__form">
-                <input
-                  type="email"
-                  placeholder="Enter your email.."
-                  ref={emailReference}
-                />
-                <button type="submit" onClick={handleSubmit}>
-                  Get Started
-                </button>
-              </form>
-            </div>
+            <GetStarted handleSubmit={handleSubmit} />
           )}
         </div>
       </div>
