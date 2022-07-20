@@ -3,11 +3,11 @@
   width: 17rem;
   height: 10rem;
   position: fixed;
-  top: -120%;
+  top: -40%;
   left: 38%;
   border-radius: 7px;
   margin: auto;
-  transition: all 1s linear;
+  transition: all 0s ease-in;
   background-color: rgba(0, 0, 0, 0.916);
   color: white;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 16px,

@@ -4,12 +4,8 @@ import Banner from "../components/Banner";
 import Nav from "../components/Nav";
 import Row from "../components/Row";
 import Modal from "../components/Modal";
-import { useSelector } from "react-redux";
-import { selectNotFound } from "../features/errorSlice";
 
 function HomeScreen() {
-  const movieNotFound = useSelector(selectNotFound);
-
   return (
     <>
       <Nav />
@@ -27,7 +23,7 @@ function HomeScreen() {
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documentaries" fetchUrl={requests.fetchNetflixOriginals} />
 
-      {movieNotFound && <Modal movieNotFound={movieNotFound} />}
+      {<Modal />}
     </>
   );
 }
