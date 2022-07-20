@@ -4,23 +4,24 @@ import { fromRegister } from "../features/userSlice";
 import { auth } from "../firebase";
 import LoginBtn from "./LoginBtn";
 
-function LoginForm({ email, handleShowRegister }) {
+function RegisterForm({ email, handleShowSignIn }) {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-
-    console.log("email:", email, "password:", password);
+    dispatch(fromRegister(true));
     auth
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(
+        emailRef.current.value,
+        passwordRef.current.value
+      )
       .then((authUser) => {
         console.log(authUser);
-        // set comming from register route to false
-        dispatch(fromRegister(false));
+        alert("Account registerd successfully");
+        // go back to sigh in
+        handleShowSignIn();
       })
       .catch((error) => {
         alert(error);
@@ -30,7 +31,7 @@ function LoginForm({ email, handleShowRegister }) {
   return (
     <>
       <form className="loginScreen__loginForm">
-        <h2 style={{ color: "white" }}>Sign In</h2>
+        <h2 style={{ color: "white" }}>Register </h2>
         <input
           type="email"
           defaultValue={email}
@@ -45,12 +46,12 @@ function LoginForm({ email, handleShowRegister }) {
           placeholder="Enter password"
           ref={passwordRef}
         />
-        <LoginBtn handleSubmit={handleSubmit} text={"Sign in"} />
+        <LoginBtn handleSubmit={handleSubmit} text={"Register"} />
 
         <p className="loginScreen__registertxt">
-          <span className="loginScreen__gray">Don't have an account? </span>
-          <span className="loginScreen__link" onClick={handleShowRegister}>
-            register now
+          <span className="loginScreen__gray">Have an account already? </span>
+          <span className="loginScreen__link" onClick={handleShowSignIn}>
+            Sign in
           </span>
         </p>
       </form>
@@ -58,4 +59,4 @@ function LoginForm({ email, handleShowRegister }) {
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

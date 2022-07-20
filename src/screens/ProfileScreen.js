@@ -36,7 +36,6 @@ function ProfileScreen() {
               className="profileScreen__submit"
               onClick={() => {
                 auth.signOut();
-                alert("Signout successful");
               }}
             >
               Sign Out
