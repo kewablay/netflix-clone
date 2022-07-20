@@ -38,7 +38,7 @@ function App() {
     });
 
     return unsuscribe;
-  }, [dispatch]);
+  }, [dispatch, fromRegisterRoute]);
 
   return (
     <div className="app">

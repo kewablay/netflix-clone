@@ -11,7 +11,7 @@ function RegisterForm({ email, handleShowSignIn }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(fromRegister());
+    dispatch(fromRegister(true));
     auth
       .createUserWithEmailAndPassword(
         emailRef.current.value,
