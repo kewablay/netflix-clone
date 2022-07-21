@@ -24,13 +24,17 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
 
   const handleClick = (movie) => {
     console.table(movie);
+    // if trailer is already open
     if (trailerUrl) {
       setTrailerUrl("");
+      // close it
     } else {
-      console.log("getting url of", movie?.name || movie?.original_name);
+      console.log("getting url of", movie?.name || movie?.title);
       setIsLoading(true);
-      movieTrailer(movie?.name || "")
+      // get movie trailer with name of movie
+      movieTrailer(movie?.name || movie?.title || "")
         .then((url) => {
+          console.log(url);
           const urlParams = new URLSearchParams(new URL(url).search);
           console.log(urlParams.get("v"));
           setTrailerUrl(urlParams.get("v"));
@@ -64,13 +68,10 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
       <div className="row__posters">
         {movies.map(
           (movie) =>
-            ((isLargeRow && movie.poster_path) ||
-              (!isLargeRow && movie.backdrop_path)) && (
+            movie.poster_path && (
               <img
-                className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-                src={`${base_url}${
-                  isLargeRow ? movie?.poster_path : movie?.backdrop_path
-                }`}
+                className={`row__poster`}
+                src={`${base_url}${movie?.poster_path}`}
                 alt=""
                 key={movie?.id}
                 onClick={() => handleClick(movie)}

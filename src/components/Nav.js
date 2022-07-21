@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
 
-function Nav() {
+function Nav({ handleSubmit }) {
   const [show, setShow] = useState(false);
   const user = useSelector(selectUser);
   const navigate = useNavigate();
@@ -37,7 +37,9 @@ function Nav() {
             onClick={() => navigate("/profile")}
           />
         ) : (
-          <button className="nav__button">Sign In</button>
+          <button className="nav__button" onClick={handleSubmit}>
+            Sign In
+          </button>
         )}
       </div>
     </div>
