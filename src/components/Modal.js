@@ -9,7 +9,7 @@ function Modal() {
   const movieNotFound = useSelector(selectNotFound);
 
   return (
-    <div className="modal" style={{ top: `${movieNotFound ? "25%" : "-50%"}` }}>
+    <div className="modal" style={{ top: `${movieNotFound ? "30%" : "-50%"}` }}>
       <div className="modal__content">
         <img className="modal__image" src={Movie} alt=":(" />
         <p className="modal__info">Movie trailer not found</p>

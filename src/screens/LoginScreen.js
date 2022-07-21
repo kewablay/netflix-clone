@@ -15,6 +15,9 @@ function LoginScreen() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (showRegister) {
+      setShowregister(false);
+    }
     setSignIn(true);
     setEmail(emailReference.current.value);
   };
@@ -28,7 +31,7 @@ function LoginScreen() {
 
   return (
     <div>
-      <Nav />
+      <Nav handleSubmit={handleSubmit} />
       <div
         id="loginScreen"
         style={{

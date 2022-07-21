@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { fromRegister } from "../features/userSlice";
 import { auth } from "../firebase";
 import LoginBtn from "./LoginBtn";
@@ -8,6 +9,7 @@ function LoginForm({ email, handleShowRegister }) {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ function LoginForm({ email, handleShowRegister }) {
         console.log(authUser);
         // set comming from register route to false
         dispatch(fromRegister(false));
+        navigate("/");
       })
       .catch((error) => {
         alert(error);

@@ -10,8 +10,12 @@ function GetStarted({ handleSubmit }) {
           Ready to watch? Enter your email to create ro restart your membership
         </small>
         <form className="getStarted__form">
-          <input type="email" placeholder="Enter your email.." />
-          <button type="submit" onClick={handleSubmit}>
+          <input
+            id="getStarted"
+            type="email"
+            placeholder="Enter your email.."
+          />
+          <button id="getStartedBtn" type="submit" onClick={handleSubmit}>
             Get Started
           </button>
         </form>
